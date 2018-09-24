@@ -19,7 +19,7 @@ plugins=(
 autoload -U compinit && compinit # reload completions for zsh-completions
 
 source $ZSH/oh-my-zsh.sh # required
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zshi # required
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh # required
 
 # Colorize autosuggest
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
