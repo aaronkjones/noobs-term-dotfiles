@@ -19,6 +19,10 @@ plugins=(
 autoload -U compinit && compinit # reload completions for zsh-completions
 
 source $ZSH/oh-my-zsh.sh # required
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zshi # required
+
+# Colorize autosuggest
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 # Spaceship-prompt customization
 SPACESHIP_PROMPT_ORDER=(
@@ -59,3 +63,17 @@ char            # Prompt character
 SPACESHIP_DIR_PREFIX="%{$fg[blue]%}┌─[%b "
 SPACESHIP_DIR_SUFFIX="%{$fg[blue]%} ] "
 SPACESHIP_CHAR_SYMBOL="%{$fg[blue]%}└─▪%b "
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
