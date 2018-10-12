@@ -26,11 +26,11 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 # Spaceship-prompt customization
 SPACESHIP_PROMPT_ORDER=(
-time            # Time stampts section
 user            # Username section
 dir             # Current directory section
 host            # Hostname section
 git             # Git section (git_branch + git_status)
+time          # Time stampts section
 # hg            # Mercurial section (hg_branch  + hg_status)
 # package       # Package version
 # node          # Node.js section
