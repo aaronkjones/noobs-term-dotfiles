@@ -26,8 +26,8 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 # Spaceship-prompt customization
 SPACESHIP_PROMPT_ORDER=(
-user            # Username section
 dir             # Current directory section
+user            # Username section
 host            # Hostname section
 git             # Git section (git_branch + git_status)
 time          # Time stampts section
