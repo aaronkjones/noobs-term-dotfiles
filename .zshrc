@@ -1,7 +1,22 @@
+#
+# Tmux
+#
+
 if [ -z "$TMUX" ] # When zsh is started attach to current tmux session or create a new one
 then
     tmux attach -t TMUX || tmux new -s TMUX
 fi
+
+#
+# Neovim
+#
+
+export EDITOR="nvim"
+alias vim="nvim"
+
+#
+# Oh-my-zsh
+#
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -23,6 +38,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh # required
 
 # Colorize autosuggest
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+
+#
+# Spaceship-prompt
+#
 
 # Spaceship-prompt customization
 SPACESHIP_PROMPT_ORDER=(
@@ -63,6 +82,10 @@ char            # Prompt character
 SPACESHIP_DIR_PREFIX="%{$fg[blue]%}┌─[%b "
 SPACESHIP_DIR_SUFFIX="%{$fg[blue]%} ] "
 SPACESHIP_CHAR_SYMBOL="%{$fg[blue]%}└─▪%b "
+
+#
+# Other
+#
 
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238
